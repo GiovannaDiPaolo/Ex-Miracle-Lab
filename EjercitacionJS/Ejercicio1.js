@@ -24,4 +24,4 @@ function golfscore(strokes, par){
 };
 
 
-golfscore(5,4);
+golfscore(6,4);
