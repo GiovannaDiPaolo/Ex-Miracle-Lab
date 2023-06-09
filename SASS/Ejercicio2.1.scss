@@ -1,0 +1,30 @@
+@mixin box-shadow-prefix($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    -o-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+  
+  @mixin fixed-margin($margin) {
+    margin: $margin;
+  }
+  
+  @mixin fixed-padding($padding) {
+    padding: $padding;
+  }
+  
+  @mixin border-properties($width, $style, $color) {
+    border-width: $width;
+    border-style: $style;
+    border-color: $color;
+  }
+  
+  // Ejemplo de uso
+  .my-element {
+    @include box-shadow-prefix(0 0 5px rgba(0, 0, 0, 0.5));
+    @include fixed-margin(10px);
+    @include fixed-padding(20px);
+    @include border-properties(1px, solid, #ccc);
+  }
+  
