@@ -1,0 +1,18 @@
+$primary-color: #ff0000;
+$screen-size: 768px;
+
+.container {
+  background-color: $primary-color;
+
+  @if $screen-size >= 768px {
+    padding: 20px;
+  } @else {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: $screen-size) {
+  .container {
+    font-size: 14px;
+  }
+}
