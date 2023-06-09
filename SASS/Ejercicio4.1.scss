@@ -1,0 +1,71 @@
+// variables.
+
+$primary-color: #ff0000;
+$secondary-color: #00ff00;
+
+.header {
+  background-color: $primary-color;
+  color: $secondary-color;
+}
+
+.button {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+// nesting.
+
+.container {
+    width: 100%;
+    
+    .box {
+      padding: 10px;
+      margin-bottom: 20px;
+      
+      p {
+        font-size: 16px;
+        color: #333;
+      }
+      
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+
+  // mixins
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+  }
+  
+  .card {
+    @include box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+
+  // herencia
+
+%button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    
+    &:hover {
+      background-color: #990000;
+    }
+  }
+  
+  .button {
+    @extend %button;
+  }
+  
+  .link-button {
+    @extend %button;
+    text-decoration: underline;
+  }
+
+  
