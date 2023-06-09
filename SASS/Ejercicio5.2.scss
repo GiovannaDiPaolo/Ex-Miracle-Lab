@@ -1,0 +1,9 @@
+$days-of-week: monday, tuesday, wednesday, thursday, friday, saturday, sunday;
+
+@each $day in $days-of-week {
+  .#{$day} {
+    background-color: lighten(#0000ff, index($days-of-week, $day) * 5%);
+    color: white;
+    padding: 10px;
+  }
+}
