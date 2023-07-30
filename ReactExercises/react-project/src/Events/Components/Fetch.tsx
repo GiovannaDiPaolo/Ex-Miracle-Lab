@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
+import {useState} from 'react';
 
-const Fetch: React.FC = () => {
-  const [response, setResponse] = useState<string>('');
-  const [error, setError] = useState<string>('');
+interface jsonResponse {
+  userId: number,
+  title: string,
+  completed: boolean
+}
 
+export function Fetch () : JSX.Element {
+  const [response, setResponse] = useState<jsonResponse | null>(null);
+;
   const url = 'https://jsonplaceholder.typicode.com/todos/1';
 
   const makeRequest = async () => {
     try {
       const resp = await fetch(url);
       const json = await resp.json();
-      const data = JSON.stringify(json);
-      setResponse(data);
-      setError('');
+      setResponse(json);
     } catch (error) {
-      setResponse('');
-      setError('Hubo un error');
+      console.log('Error data:', error);
     }
   };
 
   return (
     <div className="petition">
       <button onClick={makeRequest}>Petición</button>
-      {error && <div>{error}</div>}
-      {response && <code>{response}</code>}
+      {response && <code>{JSON.stringify(response)}</code>}
     </div>
   );
 };
-export default Fetch;
-

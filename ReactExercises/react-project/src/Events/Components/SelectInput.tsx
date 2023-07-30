@@ -3,9 +3,9 @@ interface SelectInputProps {
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const SelectInput: React.FC<SelectInputProps> = ({ value, onChange }) => {
+export function SelectInput (props: SelectInputProps): JSX.Element{
   return (
-    <select value={value} onChange={onChange}>
+    <select value={props.value} onChange={props.onChange}>
       <option value="">Selecciona una opción</option>
       <option value="option1">Opción 1</option>
       <option value="option2">Opción 2</option>
@@ -13,5 +13,3 @@ const SelectInput: React.FC<SelectInputProps> = ({ value, onChange }) => {
     </select>
   );
 };
-
-export default SelectInput;
