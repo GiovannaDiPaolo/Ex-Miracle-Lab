@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "dff6c23c-bc15-4adb-8c57-f15c782b0030",
+		"name": "NewCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28447875"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/zen",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"zen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users/{{username}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"{{username}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"MiracleLab API Repo\",\r\n\"private\": true,\r\n\"auto_init\": true,\r\n\"gitignore_template\": \"nanoc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/repos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7 Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"MiracleLab API Repo\",\r\n\"private\": true,\r\n\"auto_init\": true,\r\n\"incorrecto\": \"nanoc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/repos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"New logo\",\r\n\"body\": \"We should have one\",\r\n\"labels\": []\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/repos/:owner/:reponame/issues",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":reponame",
+						"issues"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "GiovannaDiPaolo"
+						},
+						{
+							"key": "reponame",
+							"value": "MiracleLab-API-Repo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/repos/:owner/:repo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":repo"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "GiovannaDiPaolo"
+						},
+						{
+							"key": "repo",
+							"value": "MiracleLab-API-Repo"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "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",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "GiovannaDiPaolo",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "https://api.github.com",
+			"type": "string"
+		},
+		{
+			"key": "repoName",
+			"value": "githubApiTest",
+			"type": "string"
+		}
+	]
+}
