@@ -1,6 +1,6 @@
 import React from 'react';
-import PostList from '.PostList';
-import withDataFetching from '.withDataFetching';
+import withDataFetching from './withDataFetching';
+import { PostList } from './PostList';
 
 const App: React.FC = () => {
   const API_URL = 'https://jsonplaceholder.typicode.com/posts';

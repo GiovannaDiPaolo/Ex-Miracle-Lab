@@ -41,21 +41,21 @@ function ListItem(props: ListItemProps) {
     setEditedText(value);
   }
 
+  const editItem =  <>
+                      <InputText value={editedText} onChange={handleTextChange} />
+                      <button onClick={handleSaveClick}>Save</button>
+                      <button onClick={handleCancelClick}>Cancel</button>
+                    </>
+
+  const shownItem = <>
+                      <span style={{margin: 5}}>{props.task.text}</span>
+                      <button onClick={handleEditClick}>Edit</button>
+                      <RemoveTaskButton onClick={handleDeleteClick} />
+                    </>
+
   return (
     <li>
-      {isEditing ? (
-        <>
-          <InputText value={editedText} onChange={handleTextChange} />
-          <button onClick={handleSaveClick}>Save</button>
-          <button onClick={handleCancelClick}>Cancel</button>
-        </>
-      ) : (
-        <>
-          <span>{props.task.text}</span>
-          <button onClick={handleEditClick}>Edit</button>
-          <RemoveTaskButton onClick={handleDeleteClick} />
-        </>
-      )}
+      {isEditing ? editItem : shownItem}
     </li>
   );
 }
