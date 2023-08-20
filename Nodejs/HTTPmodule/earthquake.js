@@ -1,5 +1,4 @@
-const http = require('http');
-const url = require('url');
+const https = require('https');
 
 const args = process.argv.slice(2);
 const magnitude = parseFloat(args[0]);
@@ -11,7 +10,7 @@ if (isNaN(magnitude) || magnitude <= 0) {
 
 const apiUrl = `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson`;
 
-http.get(apiUrl, (response) => {
+https.get(apiUrl, (response) => {
     let data = '';
 
     response.on('data', (chunk) => {

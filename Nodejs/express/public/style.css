@@ -1,0 +1,14 @@
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    background-color: rgb(211, 31, 181);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+}
+  
+p {
+    font-size: 25px;
+    border: 2px solid;
+    text-align: center;
+}

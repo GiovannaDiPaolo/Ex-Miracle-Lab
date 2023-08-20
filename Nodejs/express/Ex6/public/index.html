@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web App</title>
+</head>
+<body>
+    <h1>Welcome to My Web App</h1>
+
+    <div id="data-container">
+    </div>
+
+    <script>
+        const dataContainer = document.getElementById("data-container");
+
+        fetch("/api/data")
+            .then(response => response.json())
+            .then(data => {
+                const dataHTML = `<p>Data received: ${data.message}</p>`;
+                dataContainer.innerHTML = dataHTML;
+            })
+            .catch(error => {
+                console.error("Error en la llamada AJAX:", error);
+                dataContainer.innerHTML = "<p>Error en la llamada AJAX</p>";
+            });
+    </script>
+</body>
+</html>
